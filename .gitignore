@@ -1,0 +1,37 @@
+
+*.class# ---- Compiled binaries ----
+*.exe
+*.out
+*.o
+*.obj
+
+# ---- Debug / temp files ----
+*.log
+*.tmp
+*.swp
+
+# ---- IDE / Editor folders ----
+.vscode/
+.idea/
+*.code-workspace
+
+# ---- OS generated ----
+.DS_Store
+Thumbs.db
+
+# ---- Python cache (if used) ----
+__pycache__/
+*.pyc
+
+# ---- CMake / build dirs ----
+build/
+cmake-build-*/
+
+# ---- Input / output testing files ----
+input.txt
+output.txt
+
+
+# ---- CP Helper extension ----
+.cph/
+

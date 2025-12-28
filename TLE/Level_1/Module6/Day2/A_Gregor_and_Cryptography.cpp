@@ -37,8 +37,6 @@ int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-//   sieve(); // Uncomment if you need primes
-
     int t = 1;
     cin >> t;
     while (t--) {
