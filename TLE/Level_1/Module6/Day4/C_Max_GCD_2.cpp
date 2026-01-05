@@ -5,24 +5,13 @@ using namespace std;
 #define pb push_back
 #define all(v) v.begin(), v.end()
 
-// Euclidean Algorithm — O(log N)
-ll gcd(ll a, ll b) {
-    if (b == 0) return a;
-    return gcd(b, a % b);
-}
-
-// LCM — overflow-safe
-ll lcm(ll a, ll b) {
-    return (a / gcd(a, b)) * b;
-}
-
 void solve() {
     int A,B;
     cin>>A>>B;
-    if(B-A == 1) {
+    if(B-A + 1 == 1) {
         cout<<"1\n";
     }
-    else if(B-A <= 3) {
+    else if(B-A + 1 <= 3) {
         if(A % 2 == 0) {
             cout<<"2\n";
         }
@@ -31,7 +20,19 @@ void solve() {
         }
     }
     else {
-        
+        ll a = B - A + 1;
+        for(ll i = a; i >= 2; i--) {
+            ll div = A / i;
+            if(A % i == 0 && B >= ((div + 1) * i)) {
+                cout<<i<<"\n";
+                return;
+            }
+            else if(A % i != 0 && B >= ((div + 2) * i)) {
+                cout<<i<<"\n";
+                return;
+            }
+        }
+        cout<<1<<"\n";
     }
 }
 
