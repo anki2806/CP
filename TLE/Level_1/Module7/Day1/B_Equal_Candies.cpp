@@ -7,18 +7,24 @@ using namespace std;
 #define ANKIT ios_base::sync_with_stdio(false); cin.tie(NULL);
 
 void solve() {
-    ll n;
+    int n;
     cin>>n;
 
-    ll i = 1;
-    while(n % i == 0) {
-        i++;
+    vector<int> v(n);
+    int m = 100000000;
+    for(int i = 0; i < n; i++) {
+        cin>>v[i];
+        m = min(v[i], m);
     }
-    cout<<i - 1<<"\n";
+    ll ans = 0;
+    for(int i = 0; i < n; i++) {
+        ans += abs(m - v[i]);
+    }
+
+    cout<<ans<<"\n";
 }
 
 int main() {
-    
     ANKIT
 
     int t = 1;
