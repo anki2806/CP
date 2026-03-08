@@ -11,37 +11,35 @@ void solve() {
     cin>>n;
     string s;
     cin>>s;
+
+    if(n <= 2) {
+        cout<<"1\n";
+        return;
+    }
+
     int ans = 0;
+    if(s[0] == '0' && s[1] == '0') {
+        s[1] = '1';
+    }
     int count = 0;
     for(int i = 0; i < n; i++) {
         if(s[i] == '0') {
             count++;
+            if(count == 3) {
+                s[i] = '1';
+                count = 0;
+            }
         }
         else {
-            ans++;
-            if(count % 2 == 1) {
-                ans += count / 2;
-            }
-            else {
-                if(count > 0) {
-                    ans += ((count / 2) - 1);
-                }
-            }
             count = 0;
         }
     }
-    
-    if(n == count && count <= 3) {
-        ans = 1;
+    if(s[n - 1] == '0' && s[n - 2] == '0') {
+        s[n - 2] = '1';
     }
-    else {
-        if(count != 0 && count % 2 == 0) {
-            // cout<<"yes";
-            ans += (count / 2) - 1;
-        }
-        else if(count != 0 && count % 2 == 1) {
-            // cout<<"NOOO";
-            ans += (count / 2);
+    for(int i = 0; i < n; i++) {
+        if(s[i] == '1') {
+            ans++;
         }
     }
     cout<<ans<<"\n";

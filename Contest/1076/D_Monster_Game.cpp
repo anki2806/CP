@@ -19,25 +19,20 @@ int valFind(int s, int e, vector<int> &v) {
 void solve() {
     int n;
     cin>>n;
-    vector<int> a(n);
-    vector<int> b(n);
-    int mi = INT_MAX, ma = INT_MIN;
+    
+    vector<ll> s(n);
+    vector<ll> m(n);
+    
     for(int i = 0; i < n; i++) {
-        cin>>a[i];
-        mi = min(mi, a[i]);
-        ma = max(ma, a[i]);
-    }
-    vector<int> sum(n);
-    for(int i = 0; i < n; i++) {
-        cin>>b[i];
-        sum[i] = 0;
-    }
-    sum[0] = b[0];
-    for(int i = 1; i < n; i++) {
-        sum[i] = sum[i - 1] + b[i];
+        cin>>s[i];
     }
 
-    while()
+    for(int i = 0; i < n; i++) {
+        cin>>m[i];
+    }
+
+    sort(all(s));
+    
     
     
 }
