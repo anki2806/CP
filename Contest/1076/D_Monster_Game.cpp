@@ -32,6 +32,19 @@ void solve() {
     }
 
     sort(all(s));
+    ll ans = 0;
+
+    for(int i = 1; i < n; i++) {
+        m[i] += m[i - 1];
+    }
+
+    for(int i = 0; i < n; i++) {
+        if(m[i] <= n) {
+            ans = max(ans, (i + 1) * s[(n - m[i])]);
+        }
+    }
+
+    cout<<ans<<"\n";
     
     
     
