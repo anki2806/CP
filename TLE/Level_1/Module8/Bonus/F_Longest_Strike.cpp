@@ -7,33 +7,21 @@ using namespace std;
 #define ANKIT ios_base::sync_with_stdio(false); cin.tie(NULL);
 
 void solve() {
-    int n;
-    cin>>n;
+    int n, k;
+    cin>>n>>k;
 
-    vector<int> v(n);
-
+    vector<int> v(n, 0);
+    
     for(int i = 0; i < n; i++) {
         cin>>v[i];
     }
-
-    set<int> st;
-    int j = 0;
-    int ans = 1;
-    for(int i = 0; i < n; i++) {
-        while(st.count(v[i]) > 0) {
-            st.erase(v[j]);
-            j++;
-        }
-        ans = max(ans, i - j + 1);
-        st.insert(v[i]);
-    }
-    cout<<ans<<"\n";
+    sort(all(v));
 }
 
 int main() {
     ANKIT
     int t = 1;
-    // cin >> t;
+    cin >> t;
     while (t--) {
         solve();
     }
